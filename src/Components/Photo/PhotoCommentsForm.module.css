@@ -60,3 +60,7 @@
     opacity: 1;
   }
 }
+
+.single.form {
+  margin: 1rem 0;
+}
