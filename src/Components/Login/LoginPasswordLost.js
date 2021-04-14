@@ -5,6 +5,7 @@ import useForm from '../../Hooks/useForm';
 import useFetch from '../../Hooks/useFetch';
 import Error from '../Helper/Error';
 import { PASSWORD_LOST } from '../../Api';
+import Head from '../Helper/Head';
 
 function LoginPasswordLost() {
   const login = useForm();
@@ -17,12 +18,13 @@ function LoginPasswordLost() {
         login: login.value,
         url: `${window.location.origin}/resetar`,
       });
-      const { response, json } = await request(url, options);
+      await request(url, options);
     }
   }
 
   return (
-    <section>
+    <section className="animeLeft">
+      <Head title="Recupere sua senha" />
       <h1 className="title">Perdeu a senha?</h1>
       {data ? (
         <p style={{ color: '#4c1' }}>Email enviado</p>

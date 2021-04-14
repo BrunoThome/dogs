@@ -3,15 +3,15 @@ import Input from '../Forms/Input';
 import Button from '../Forms/Button';
 import useForm from '../../Hooks/useForm';
 import useFetch from '../../Hooks/useFetch';
-import Error from '../Helper/Error';
 import { PASSWORD_RESET } from '../../Api';
 import { useNavigate } from 'react-router-dom';
+import Head from '../Helper/Head';
 
 function LoginPasswordReset() {
   const [login, setLogin] = React.useState('');
   const [key, setKey] = React.useState('');
   const password = useForm();
-  const { loading, error, request } = useFetch();
+  const { loading, request } = useFetch();
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -36,7 +36,8 @@ function LoginPasswordReset() {
   }
 
   return (
-    <div>
+    <section className="animeLeft">
+      <Head title="Altere sua senha" />
       <h1 className="title">Altere sua senha</h1>
       <form onSubmit={handleSubmit}>
         <Input
@@ -51,7 +52,7 @@ function LoginPasswordReset() {
           <Button>Alterar</Button>
         )}
       </form>
-    </div>
+    </section>
   );
 }
 

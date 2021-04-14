@@ -34,7 +34,8 @@
   border-color: #fb1;
 }
 
-.nav a.active svg > * {
+.nav a.active svg > *,
+.navMobile a.active svg > * {
   fill: #fb1;
 }
 
